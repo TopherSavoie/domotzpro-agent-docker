@@ -19,5 +19,7 @@ RUN printf "#!/bin/sh\necho N 2" > /sbin/runlevel \
 RUN mkdir /opt/utils
 COPY runme.sh /opt/utils
 
+RUN chmod 777 /opt/utils/runme.sh
+
 CMD service domotz start \
  && /opt/utils/runme.sh
